@@ -8,7 +8,7 @@ while (num > 0) {
 
 console.log(mult);
 
-mult = mult ** 3;
+mult **= 3;
 console.log(mult);
 
 console.log(String(mult).slice(0,2));
