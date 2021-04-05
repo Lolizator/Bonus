@@ -1,13 +1,12 @@
 let lang = prompt('Введите язык ru или en?');
 
-let ru = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
-let en = ["Monday", "Tuesday", "Wednesday", "Thursda", "Friday", "Saturday", "Sunday"];
+let arrLang = [["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"], ["Monday", "Tuesday", "Wednesday", "Thursda", "Friday", "Saturday", "Sunday"]];
 
 // a)
-if (lang == "ru"){
-    console.log(ru);
+if (lang === "ru"){
+    console.log(arrLang[0]);
 } else if (lang === "en"){
-    console.log(en);
+    console.log(arrLang[1]);
 } else {
     console.log("Вы наверное ошиблись")
 }
@@ -15,11 +14,11 @@ if (lang == "ru"){
 // б)
 switch(lang) {
     case 'ru':  
-        console.log(ru);
+        console.log(arrLang[0]);
     break;
 
     case 'en':
-        console.log(en);
+        console.log(arrLang[1]);
     break;
 
     default:
@@ -28,14 +27,14 @@ switch(lang) {
 
 // в)
 let lang_array = [];
-lang_array['ru'] = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
-lang_array['en'] = ["Monday", "Tuesday", "Wednesday", "Thursda", "Friday", "Saturday", "Sunday"];
+lang_array['ru'] = arrLang[0];
+lang_array['en'] = arrLang[1];
 console.log(lang_array[lang]);
 
 // Второе задание
 let namePerson = prompt('Введите ваше имя?');
 
-let person = (namePerson == 'Артём') ? 'директор' :
-             (namePerson == 'Максим') ? 'преподаватель' :
+let person = (namePerson === 'Артём') ? 'директор' :
+             (namePerson === 'Максим') ? 'преподаватель' :
              'студент';
 console.log(person);
