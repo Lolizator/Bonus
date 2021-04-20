@@ -23,6 +23,7 @@ const render = function() {
                             '<button class="todo-remove"></button>' + 
                             '<button class="todo-complete"></button>' + 
                         '</div>';
+        localStorage.setItem('toDo', JSON.stringify(todoData));
         if(item.completed){
             todoCompleted.append(li);
         }else{
@@ -32,7 +33,6 @@ const render = function() {
         const btnTodoCompleted = li.querySelector('.todo-complete');
         btnTodoCompleted.addEventListener('click', function(){
             item.completed = !item.completed;
-            localStorage.setItem('toDo', JSON.stringify(todoData));
             render();
         });
 
@@ -71,8 +71,4 @@ todoControl.addEventListener('submit', function(event){
     }
 
     render();
-    
-    
-
-    
 });
