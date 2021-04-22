@@ -1,7 +1,7 @@
 'use strict';
 
 const DomElement = function(selector, height, width, bg = '#000', fontSize = '12px') {
-    this.selector = prompt('Введите block или best');
+    this.selector = prompt('Введите .block или #best');
     this.height = +prompt('Введите высоту');
     this.width = +prompt('Введите ширину');
     this.bg = prompt('Введите цвет на английском');
@@ -10,16 +10,16 @@ const DomElement = function(selector, height, width, bg = '#000', fontSize = '12
 
 DomElement.prototype.createElement = function() {
 
-    // let selector = this.selector.split('')[0];
+    let selector = this.selector.split('')[0];
 
     let div = document.createElement('div');
 
-    if (this.selector === 'block') {
+    if (this.selector === '.block') {
         document.body.appendChild(div);
-        div.setAttribute('class', this.selector);
-    } else if ((this.selector === 'best')) {
+        div.setAttribute('class', this.selector.slice(1));
+    } else if ((this.selector === '#best')) {
         document.body.appendChild(div);
-        div.setAttribute('id', this.selector);
+        div.setAttribute('id', this.selector.slice(1));
     }
 
     div.textContent = '"Элемент"';
