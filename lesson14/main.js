@@ -10,7 +10,7 @@ const DomElement = function(selector, height, width, bg = '#000', fontSize = '12
 
 DomElement.prototype.createElement = function() {
 
-    let selector = this.selector.split('')[0];
+    // let selector = this.selector.split('')[0];
 
     let div = document.createElement('div');
 
